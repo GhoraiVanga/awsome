@@ -16,36 +16,46 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awsome App"),
       ),
-      body: Container(
-        height: 500,
-        color: Colors.teal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: Center(
+        child: Container(),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              alignment: Alignment.center,
+            UserAccountsDrawerHeader(
+              accountName: Text("Suman Ghorai"),
+              accountEmail: Text("ghorai77@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1620001001197-2484c0bb0f3f?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTN8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
+              ),
             ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Suman Ghorai"),
+              subtitle: Text("Developer"),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              alignment: Alignment.center,
-            )
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("ghorai77@gmail.com"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Suman Ghorai"),
+              subtitle: Text("Developer"),
+              trailing: Icon(Icons.edit),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
       ),
     );
   }
